@@ -4,7 +4,7 @@ import os
 import numpy as np
 import argparse
 from get_data import get_data
-from keras_preprocessing.image import ImageDataGenerator
+from keras.preprocessing.image import ImageDataGenerator
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
