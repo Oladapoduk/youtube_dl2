@@ -88,7 +88,8 @@ def train_model(config_file):
                                     validation_steps = len(test_set)
             ) 
             train_loss=history.history['loss'][-1]
-            #train_acc=history.history['sparse_categorical_accuracy'][-1]
+            train_acc=history.history['accuracy'][-1]
+            # train_acc=history.history['sparse_categorical_accuracy'][-1]
             val_loss=history.history['val_loss'][-1]
             #val_acc=history.history['val_sparse_categorical_accuracy'][-1]
 
@@ -100,10 +101,10 @@ def train_model(config_file):
             #mlflow.log_param("alpha", alpha)
             mlflow.log_param("epochs", epochs)
             #mlflow.log_param("optimizer", optimizer)
-            #mlflow.log_param("loss", loss)
+            mlflow.log_param("train_loss", train_loss)
             #mlflow.log_param("metrics", metrics)
-            mlflow.log_param("loss", loss)
-            #mlflow.log_param("train_accuracy", train_acc)
+            #mlflow.log_param("val_loss: ", val_loss)
+            mlflow.log_param("train_accuracy", train_acc)
             mlflow.log_param("val_loss", val_loss)
             #mlflow.log_param("val_accuracy", val_acc)
 
